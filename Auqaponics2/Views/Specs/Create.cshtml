@@ -1,0 +1,53 @@
+﻿@model Auqaponics2.Models.Specs
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Specs</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TankSize" class="control-label"></label>
+                <input asp-for="TankSize" class="form-control" />
+                <span asp-validation-for="TankSize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Plants" class="control-label"></label>
+                <input asp-for="Plants" class="form-control" />
+                <span asp-validation-for="Plants" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fish" class="control-label"></label>
+                <input asp-for="Fish" class="form-control" />
+                <span asp-validation-for="Fish" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WaterTemp" class="control-label"></label>
+                <input asp-for="WaterTemp" class="form-control" />
+                <span asp-validation-for="WaterTemp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pH" class="control-label"></label>
+                <input asp-for="pH" class="form-control" />
+                <span asp-validation-for="pH" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

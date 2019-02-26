@@ -1,0 +1,65 @@
+﻿@model Auqaponics2.Models.BlogPostViewModel
+
+@{
+    ViewData["Title"] = "BlogWithPosts";
+}
+
+<h2>BlogWithPosts</h2>
+
+<div>
+    <h4>Blog</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Blog.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Blog.Name)
+        </dd>
+    </dl>
+</div>
+<p>
+    <a asp-action="CreatePostFromBlog">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Title
+            </th>
+            <th>
+                Content
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Blog)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Posts)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Blog.BlogId)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PostId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.PostId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.PostId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Blog.BlogId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

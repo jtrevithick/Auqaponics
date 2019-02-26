@@ -1,0 +1,51 @@
+﻿@model Auqaponics2.Models.Specs
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Specs</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TankSize)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TankSize)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Plants)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Plants)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Fish)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Fish)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.WaterTemp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.WaterTemp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.pH)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.pH)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="SpecsId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

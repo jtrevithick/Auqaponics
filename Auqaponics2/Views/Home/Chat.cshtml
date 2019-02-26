@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "Chat";
+}
+
+<h2>Chat Window</h2>
+
+
+
+
+
+<div class="container">
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-6">&nbsp;</div>
+        <div class="col-6">
+            <form class="form-inline">
+                <div class="input-prepend input-append">
+
+                    
+
+                    <input type="text" id="group-name" value="" placeholder="Type group name" />
+
+
+                    <input type="button" id="join-group" name="group-name" class="btn" value="Lets talk" />
+
+                    <input type="text" name="group-message" id="group-message-text" placeholder="Type a message" />
+
+                    <input type="button" id="groupmsg" class="btn" value="Send to Group" />
+                    
+                    <input type="button" id="leave-group" class="btn" value="Leave Group" />
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">&nbsp;</div>
+        <div class="col-6">
+            <ul id="messagesList"></ul>
+        </div>
+    </div>
+</div>
+<script src="~/lib//signalr/dist/browser/signalr.js"></script>
+<script src="~/js/Chat.js"></script>
